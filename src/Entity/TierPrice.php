@@ -192,11 +192,9 @@ class TierPrice implements TierPriceInterface
         $this->appliedPromotions->removeElement($catalogPromotion);
     }
 
-    public function getAppliedPromotions():ArrayCollection
+    public function getAppliedPromotions():Collection
     {
-        if(is_null($this->appliedPromotions)){
-            $this->appliedPromotions = new ArrayCollection();
-        }
+
         return $this->appliedPromotions;
     }
 

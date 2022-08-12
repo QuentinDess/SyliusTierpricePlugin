@@ -31,7 +31,6 @@ class CatalogPromotionApplicator implements CatalogPromotionApplicatorInterface
         if (!$this->checker->isApplicableOnVariant($catalogPromotion, $variant)) {
             return;
         }
-
         foreach ($catalogPromotion->getActions() as $action) {
             $this->applyDiscountFromAction($catalogPromotion, $action, $variant);
         }
@@ -55,8 +54,8 @@ class CatalogPromotionApplicator implements CatalogPromotionApplicatorInterface
 
                 foreach ($tierPrices as $tierPrice){
                     $this->actionBasedDiscountApplicator->applyDiscountOnChannelPricing($catalogPromotion, $action, $tierPrice);
-
                 }
+
             }
             $this->actionBasedDiscountApplicator->applyDiscountOnChannelPricing($catalogPromotion, $action, $channelPricing);
         }

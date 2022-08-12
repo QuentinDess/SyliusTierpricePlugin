@@ -5,3 +5,5 @@ services:
       - '@Sylius\Bundle\CoreBundle\CatalogPromotion\Applicator\ActionBasedDiscountApplicatorInterface'
       - '@Sylius\Bundle\CoreBundle\CatalogPromotion\Checker\ProductVariantForCatalogPromotionEligibilityInterface'
       - '@Sylius\Bundle\CoreBundle\CatalogPromotion\Checker\CatalogPromotionEligibilityChecker'
+  Sylius\Bundle\CoreBundle\CatalogPromotion\Processor\CatalogPromotionClearerInterface:
+    class: Brille24\SyliusTierPricePlugin\Processor\CatalogPromotionClearer
