@@ -20,7 +20,7 @@
         <many-to-one target-entity="Sylius\Component\Channel\Model\ChannelInterface" field="channel">
             <join-column name="channel_id" />
         </many-to-one>
-        <field name="channelCode" type="integer" column="channel_code" />
+        <field name="channelCode" type="string" column="channel_code" />
 
         <many-to-one target-entity="Sylius\Component\Product\Model\ProductVariantInterface" field="productVariant" inversed-by="tierPrices">
             <join-column name="product_variant_id" />
