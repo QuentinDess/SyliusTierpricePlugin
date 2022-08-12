@@ -20,6 +20,7 @@ use Sylius\Component\Core\Model\CatalogPromotionInterface;
 use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Customer\Model\CustomerGroupInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
+use Sylius\Component\Core\Model\ProductVariantInterface;
 
 class TierPrice implements TierPriceInterface
 {
@@ -48,7 +49,7 @@ class TierPrice implements TierPriceInterface
      */
     private $channelCode;
     /**
-     * @var ProductVariantInterface
+     * @var null|ProductVariantInterface
      */
     private $productVariant;
 
@@ -97,7 +98,7 @@ class TierPrice implements TierPriceInterface
         return $this->price;
     }
 
-    public function setPrice(int $price): void
+    public function setPrice(?int $price): void
     {
         $this->price = $price;
     }
@@ -112,12 +113,12 @@ class TierPrice implements TierPriceInterface
         $this->qty = max($qty, 0);
     }
 
-    public function getProductVariant(): ProductVariantInterface
+    public function getProductVariant(): ?ProductVariantInterface
     {
         return $this->productVariant;
     }
 
-    public function setProductVariant(ProductVariantInterface $productVariant): void
+    public function setProductVariant(?ProductVariantInterface $productVariant): void
     {
         $this->productVariant = $productVariant;
     }

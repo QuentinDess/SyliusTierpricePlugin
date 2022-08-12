@@ -18,7 +18,7 @@ use Sylius\Component\Core\Model\ChannelInterface;
 use Sylius\Component\Core\Model\ChannelPricingInterface;
 use Sylius\Component\Customer\Model\CustomerGroupInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
-
+use Sylius\Component\Core\Model\ProductVariantInterface;
 /**
  * Class ProductVariant
  *
@@ -28,7 +28,7 @@ interface TierPriceInterface extends ResourceInterface, ChannelPricingInterface
 {
     public function getPrice(): int;
 
-    public function setPrice(int $price): void;
+    public function setPrice(?int $price): void;
 
     public function getQty(): int;
 
@@ -37,9 +37,9 @@ interface TierPriceInterface extends ResourceInterface, ChannelPricingInterface
      */
     public function setQty(int $qty): void;
 
-    public function getProductVariant(): ProductVariantInterface;
+    public function getProductVariant(): ?ProductVariantInterface;
 
-    public function setProductVariant(ProductVariantInterface $productVariant): void;
+    public function setProductVariant(?ProductVariantInterface $productVariant): void;
 
     public function getChannel(): ?ChannelInterface;
 
