@@ -14,8 +14,8 @@
         </id>
 
         <field name="price" type="integer" column="price" />
-        <field name="originalPrice" type="integer" column="price" />
-        <field name="minimumPrice" type="integer" column="price" />
+        <field name="originalPrice" type="integer" column="original_price" />
+        <field name="minimumPrice" type="integer" column="minimum_price" />
         <field name="qty" type="integer" column="qty" />
         <many-to-one target-entity="Sylius\Component\Channel\Model\ChannelInterface" field="channel">
             <join-column name="channel_id" />

@@ -26,7 +26,7 @@ use Sylius\Component\Core\Model\ProductVariantInterface;
  */
 interface TierPriceInterface extends ResourceInterface, ChannelPricingInterface
 {
-    public function getPrice(): int;
+    public function getPrice(): ?int;
 
     public function setPrice(?int $price): void;
 
