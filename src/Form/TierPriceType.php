@@ -37,6 +37,16 @@ class TierPriceType extends AbstractType
             'required' => true,
             'currency' => $options['currency'],
         ]);
+        $builder->add('originalPrice', MoneyType::class, [
+            'label'    => 'sylius.ui.price',
+            'required' => true,
+            'currency' => $options['currency'],
+        ]);
+        $builder->add('minimuPrice', MoneyType::class, [
+            'label'    => 'sylius.ui.price',
+            'required' => true,
+            'currency' => $options['currency'],
+        ]);
 
         $builder->add('customerGroup', CustomerGroupChoiceType::class, [
             'required' => false,

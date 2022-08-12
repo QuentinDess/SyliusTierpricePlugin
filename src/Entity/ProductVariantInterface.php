@@ -16,7 +16,7 @@ namespace Brille24\SyliusTierPricePlugin\Entity;
 
 use Brille24\SyliusTierPricePlugin\Traits\TierPriceableInterface;
 
-interface ProductVariantInterface extends TierPriceableInterface
+interface ProductVariantInterface extends TierPriceableInterface, \Sylius\Component\Core\Model\ProductVariantInterface
 {
     public function removeTierPrice(TierPriceInterface $tierPrice): void;
 

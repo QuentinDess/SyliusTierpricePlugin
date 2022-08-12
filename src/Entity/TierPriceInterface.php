@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Brille24\SyliusTierPricePlugin\Entity;
 
 use Sylius\Component\Core\Model\ChannelInterface;
+use Sylius\Component\Core\Model\ChannelPricingInterface;
 use Sylius\Component\Customer\Model\CustomerGroupInterface;
 use Sylius\Component\Resource\Model\ResourceInterface;
 
@@ -23,7 +24,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
  *
  * Entity that stores a possible tier pricing for a product
  */
-interface TierPriceInterface extends ResourceInterface
+interface TierPriceInterface extends ResourceInterface, ChannelPricingInterface
 {
     public function getPrice(): int;
 
