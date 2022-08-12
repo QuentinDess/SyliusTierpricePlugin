@@ -1,6 +1,7 @@
 imports:
   - { resource: "services.xml" }
   - { resource: "resources.yml" }
+  - { resource: "/services/applicator.yaml"}
 
 sylius_ui:
   events:

@@ -1,0 +1,7 @@
+services:
+  Sylius\Bundle\CoreBundle\CatalogPromotion\Applicator\CatalogPromotionApplicatorInterface:
+    class: Brille24\SyliusTierPricePlugin\Applicator\CatalogPromotionApplicator
+    arguments:
+      - '@Sylius\Bundle\CoreBundle\CatalogPromotion\Applicator\ActionBasedDiscountApplicatorInterface'
+      - '@Sylius\Bundle\CoreBundle\CatalogPromotion\Checker\ProductVariantForCatalogPromotionEligibilityInterface'
+      - '@Sylius\Bundle\CoreBundle\CatalogPromotion\Checker\CatalogPromotionEligibilityChecker'
