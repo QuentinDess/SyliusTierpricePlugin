@@ -155,6 +155,9 @@ class TierPrice implements TierPriceInterface
 
     public function getOriginalPrice(): ?int
     {
+        if(is_null($this->originalPrice)){
+            $this->originalPrice = $this->price;
+        }
         return $this->originalPrice;
     }
 
