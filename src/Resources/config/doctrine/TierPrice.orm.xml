@@ -33,7 +33,7 @@
         <many-to-one target-entity="Sylius\Component\Customer\Model\CustomerGroupInterface" field="customerGroup">
             <join-column name="customer_group_id" />
         </many-to-one>
-        <many-to-many field="appliedPromotions" target-entity="Sylius\Component\Promotion\Model\CatalogPromotionInterface">
+        <many-to-many field="appliedPromotions" target-entity="Sylius\Component\Promotion\Model\CatalogPromotionInterface" fetch="EAGER">
             <join-table name="brille24_tier_price_catalog_promotions">
                 <join-columns>
                     <join-column name="tier_price_id" nullable="false"/>
