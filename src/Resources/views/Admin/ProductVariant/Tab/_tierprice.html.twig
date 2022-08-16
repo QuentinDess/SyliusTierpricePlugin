@@ -3,20 +3,32 @@
     <tr class="item">
         <td>
             <div class="field">
-                {{ form_widget(tierprice.qty, {'attr' : {'class': 'TIERPRICE_SORTING_CHANGED'}}) }}
+                {{ form_widget(tierprice.qty, {'attr' : {'class': 'TIERPRICE_SORTING_CHANGED tier_price_input'}}) }}
                 {{ form_errors(tierprice.qty) }}
             </div>
         </td>
         <td>
             {{ form_widget(tierprice.channel) }}
             <div class="field priceField">
-                {{ form_widget(tierprice.price, {currency: channel.baseCurrency|default('USD')}) }}
+                {{ form_widget(tierprice.price, {currency: channel.baseCurrency|default('USD'),'attr' : {'class': 'tier_price_input'}}) }}
                 {{ form_errors(tierprice.price) }}
             </div>
         </td>
         <td>
+            <div class="field priceField">
+                {{ form_widget(tierprice.originalPrice, {currency: channel.baseCurrency|default('USD'),'attr' : {'class': 'tier_price_input'}}) }}
+                {{ form_errors(tierprice.originalPrice) }}
+            </div>
+        </td>
+        <td>
+            <div class="field priceField">
+                {{ form_widget(tierprice.minimumPrice, {currency: channel.baseCurrency|default('USD'),'attr' : {'class': 'tier_price_input'}}) }}
+                {{ form_errors(tierprice.minimumPrice) }}
+            </div>
+        </td>
+        <td>
             <div class="field">
-                {{ form_widget(tierprice.customerGroup, {'attr': {'class': 'ui dropdown'}}) }}
+                {{ form_widget(tierprice.customerGroup, {'attr': {'class': 'ui dropdown'},'attr' : {'class': 'tier_price_input'}}) }}
                 {{ form_errors(tierprice.customerGroup) }}
             </div>
         </td>
@@ -61,12 +73,14 @@
             {% set bodyId = "tierPricesTable_" ~ channel.id %}
 
             <table class="ui stackable celled table" id="{{ bodyId }}_table"
-                   {# Setting the default currency for this table (channel) #}
+                    {# Setting the default currency for this table (channel) #}
                    data-prototype="{{ channel.baseCurrency|sylius_currency_symbol }}">
                 <thead>
                 <tr>
                     <th class="table-column-quantity">{{ 'sylius.ui.quantity'|trans }}</th>
                     <th>{{ 'sylius.ui.unit_price'|trans }} </th>
+                    <th>{{ 'sylius.ui.original_price'|trans }} </th>
+                    <th>{{ 'sylius.ui.minimum_price'|trans }} </th>
                     <th>{{ 'brille24_tier_price.ui.customer_group'|trans }} </th>
                     <th>{{ 'sylius.ui.delete'|trans }}</th>
                 </tr>
